@@ -1,7 +1,6 @@
-<?php
+use App\Http\Controllers\Passenger\TripController;
 
-use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['auth', 'role:passenger'])->group(function() {
+    Route::get('/booking', [TripController::class, 'create'])->name('passenger.booking');
+    Route::post('/booking', [TripController::class, 'store'])->name('passenger.booking.store');
 });
