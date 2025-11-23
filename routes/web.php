@@ -7,6 +7,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Dashboard route untuk Breeze
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
 // Passenger Routes
 Route::middleware(['auth', 'role:passenger'])
     ->prefix('passenger')
