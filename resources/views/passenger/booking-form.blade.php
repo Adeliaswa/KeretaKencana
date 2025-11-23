@@ -1,26 +1,37 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="max-w-lg mx-auto mt-10 bg-white shadow p-6 rounded-xl">
+<div class="max-w-lg mx-auto bg-white p-6 shadow rounded">
+    <h1 class="text-2xl font-bold mb-4">Pesan Trip</h1>
 
-    <h1 class="text-2xl font-semibold mb-4">Booking Trip</h1>
+    @if (session('error'))
+        <p class="text-red-500 mb-3">{{ session('error') }}</p>
+    @endif
 
-    <form action="{{ route('passenger.booking.store') }}" method="POST">
+    <form action="{{ route('passenger.booking.store') }}" method="POST" class="space-y-4">
         @csrf
 
-        <label class="block mb-2 font-medium">Lokasi Jemput</label>
-        <input type="text" name="pickup" class="w-full border p-2 rounded mb-4" required>
+        <div>
+            <label class="font-semibold">Lokasi Jemput</label>
+            <input type="text" name="pickup_location"
+                   class="w-full border p-2 rounded focus:ring focus:ring-indigo-300">
+        </div>
 
-        <label class="block mb-2 font-medium">Tujuan</label>
-        <input type="text" name="destination" class="w-full border p-2 rounded mb-4" required>
+        <div>
+            <label class="font-semibold">Tujuan</label>
+            <input type="text" name="destination"
+                   class="w-full border p-2 rounded focus:ring focus:ring-indigo-300">
+        </div>
 
-        <label class="block mb-2 font-medium">Estimasi Jarak (KM)</label>
-        <input type="number" name="distance" step="0.1" class="w-full border p-2 rounded mb-4" required>
+        <div>
+            <label class="font-semibold">Jarak (km)</label>
+            <input type="number" name="estimated_distance"
+                   class="w-full border p-2 rounded focus:ring focus:ring-indigo-300">
+        </div>
 
-        <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
-            Cari Driver
+        <button class="bg-indigo-600 w-full text-white px-4 py-2 rounded hover:bg-indigo-700">
+            Cari Driver & Pesan
         </button>
     </form>
-
 </div>
 @endsection
