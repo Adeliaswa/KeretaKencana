@@ -42,6 +42,8 @@ Route::middleware(['auth', 'role:admin'])
 
         // Resource driver
         Route::resource('drivers', DriverController::class);
+        Route::resource('trips', App\Http\Controllers\Admin\TripController::class);
+
     });
 
 // ===================== PROFILE ROUTES =====================

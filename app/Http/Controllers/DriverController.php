@@ -23,8 +23,11 @@ class DriverController extends Controller
      */
     public function create()
     {
-        // Menampilkan form di resources/views/drivers/create.blade.php
-        return view('drivers.create');
+        // Ambil semua driver yang status-nya 'available'
+        $drivers = Driver::where('status', 'available')->get();
+
+        // Kirim ke view
+        return view('drivers.create', compact('drivers'));
     }
 
     /**
@@ -46,7 +49,7 @@ class DriverController extends Controller
         Driver::create($validated);
 
         // Redirect ke halaman index dengan pesan sukses
-        return redirect()->route('drivers.index')->with('success', 'Driver baru berhasil ditambahkan!');
+        return redirect()->route('admin.drivers.index')->with('success', 'Driver baru berhasil ditambahkan!');
     }
 
     /**
@@ -86,7 +89,7 @@ class DriverController extends Controller
         $driver->update($validated);
 
         // Redirect ke halaman index dengan pesan sukses
-        return redirect()->route('drivers.index')->with('success', 'Data Driver berhasil diperbarui!');
+        return redirect()->route('admin.drivers.index')->with('success', 'Data Driver berhasil diperbarui!');
     }
 
     /**
@@ -98,6 +101,6 @@ class DriverController extends Controller
         $driver->delete();
 
         // Redirect ke halaman index dengan pesan sukses
-        return redirect()->route('drivers.index')->with('success', 'Driver berhasil dihapus!');
+        return redirect()->route('admin.drivers.index')->with('success', 'Driver berhasil dihapus!');
     }
 }

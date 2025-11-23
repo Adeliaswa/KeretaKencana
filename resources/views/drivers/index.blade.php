@@ -53,12 +53,12 @@
                             </td>
 
                             <td class="px-6 py-4 flex items-center gap-3">
-                                <a href="{{ route('drivers.edit', $driver->id) }}"
+                                <a href="{{ route('admin.drivers.edit', $driver->id) }}"
                                    class="text-indigo-600 hover:text-indigo-800 font-medium">
                                     Edit
                                 </a>
 
-                                <form action="{{ route('drivers.destroy', $driver->id) }}"
+                                <form action="{{ route('admin.drivers.destroy', $driver->id) }}"
                                       method="POST"
                                       onsubmit="return confirm('Hapus driver {{ $driver->name }}?')">
                                     @csrf
@@ -85,7 +85,7 @@
 
         {{-- Tombol di bawah --}}
         <div class="mt-6 flex justify-center">
-            <a href="{{ route('drivers.create') }}"
+            <a href="{{ route('admin.drivers.create') }}"
                class="px-5 py-3 bg-green-300 text-gray-900 rounded-lg hover:bg-green-400 transition font-medium shadow">
                 + Tambah Driver
             </a>
