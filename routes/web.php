@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\Passenger\TripController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Passenger\TripController;
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/dashboard', function () {
-    return redirect()->route('passenger.booking');
-})->middleware(['auth'])->name('dashboard');
-
+// Passenger Routes
 Route::middleware(['auth', 'role:passenger'])
     ->prefix('passenger')
     ->name('passenger.')
@@ -16,7 +16,6 @@ Route::middleware(['auth', 'role:passenger'])
         Route::get('/booking', [TripController::class, 'index'])->name('booking');
         Route::post('/booking', [TripController::class, 'store'])->name('booking.store');
         Route::get('/history', [TripController::class, 'history'])->name('history');
-
     });
 
 require __DIR__.'/auth.php';
