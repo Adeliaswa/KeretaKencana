@@ -12,7 +12,7 @@ class TripController extends Controller
 {
     public function index()
     {
-        return view('passenger.booking_form');
+        return view('passenger.booking-form');
     }
 
     public function store(Request $request)
@@ -40,7 +40,7 @@ class TripController extends Controller
             'user_id'            => auth()->id(),
             'driver_id'          => $bestDriver->id,
             'pickup_location'    => $pickup,
-            'destination'        => $dest,
+            'destination_location' => $dest,
             'estimated_distance' => $dist,
             'total_cost'         => $totalCost,
             'status'             => 'pending',

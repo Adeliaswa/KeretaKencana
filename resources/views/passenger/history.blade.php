@@ -21,7 +21,7 @@
         <tr class="hover:bg-gray-50">
             <td class="border p-2">{{ $trip->driver->name }}</td>
             <td class="border p-2">{{ $trip->pickup_location }}</td>
-            <td class="border p-2">{{ $trip->destination }}</td>
+            <td class="border p-2">{{ $trip->destination_location }}</td>
             <td class="border p-2">Rp {{ number_format($trip->total_cost) }}</td>
             <td class="border p-2">{{ ucfirst($trip->status) }}</td>
         </tr>
