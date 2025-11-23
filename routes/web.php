@@ -1,7 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Passenger\TripController;
 
+// ===================== PASSENGER ROUTES =====================
 Route::middleware(['auth', 'role:passenger'])
     ->prefix('passenger')
     ->name('passenger.')
@@ -12,16 +14,28 @@ Route::middleware(['auth', 'role:passenger'])
         Route::get('/history', [TripController::class, 'history'])->name('history');
     });
 
+
+// ===================== ADMIN ROUTES (BARU!) =====================
+Route::middleware(['auth', 'role:admin'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        Route::get('/dashboard', function () {
+            return view('admin.dashboard');   // 👈 ini nama file yg sudah kamu buat
+        })->name('dashboard');
+    });
+
+
+// ===================== DEFAULT ROUTES =====================
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('passenger.dashboard');
+})->middleware(['auth', 'verified', 'role:passenger'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

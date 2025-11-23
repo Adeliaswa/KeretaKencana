@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Warna link aktif di navigator */
+.active {
+    color: #ec4899 !important;    /* pink-500 */
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* Efek hover untuk semua link navigator */
+.nav-soft-hover {
+    transition: all 0.25s ease-in-out;
+}
+.nav-soft-hover:hover {
+    transform: scale(1.03);
+    text-decoration: underline;
+}
+
+/* Card soft / kontainer putih */
+.soft-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
