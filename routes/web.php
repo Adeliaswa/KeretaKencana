@@ -1,3 +1,5 @@
+<?php
+
 use App\Http\Controllers\Passenger\TripController;
 
 Route::middleware(['auth', 'role:passenger'])
