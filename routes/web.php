@@ -23,5 +23,8 @@ Route::middleware(['auth', 'role:passenger'])
         Route::post('/booking', [TripController::class, 'store'])->name('booking.store');
         Route::get('/history', [TripController::class, 'history'])->name('history');
     });
+use App\Http\Controllers\DriverController;
 
+Route::resource('drivers', DriverController::class)
+    ->middleware(['auth', 'verified']); 
 require __DIR__.'/auth.php';
