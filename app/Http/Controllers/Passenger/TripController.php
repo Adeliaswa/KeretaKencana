@@ -24,7 +24,7 @@ class TripController extends Controller
         ]);
 
         $pickup = $request->pickup_location;
-        $dest   = $request->destination;
+        $dest   = $request->destination_location;
         $dist   = $request->estimated_distance;
 
         $service = new DriverSearchService();
