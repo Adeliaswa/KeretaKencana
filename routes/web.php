@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Passenger\TripController;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['auth', 'role:passenger'])->group(function() {
+    Route::get('/booking', [TripController::class, 'showBookingForm'])
+         ->name('passenger.booking');
 });
+
