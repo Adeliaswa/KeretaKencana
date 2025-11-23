@@ -11,11 +11,18 @@ use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
 {
+    /**
+     * Display the login view.
+     */
     public function create(): View
     {
         return view('auth.login');
     }
 
+    /**
+     * Handle an incoming authentication request.
+     * (Sudah digabung dengan logic multi-role: admin & passenger)
+     */
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
@@ -23,18 +30,22 @@ class AuthenticatedSessionController extends Controller
 
         $user = auth()->user();
 
+        // Redirect sesuai role user
         if ($user->role === 'admin') {
             return redirect()->route('admin.dashboard');
         }
 
         if ($user->role === 'passenger') {
-            return redirect()->route('dashboard');  // passenger dashboard
+            return redirect()->route('dashboard'); // passenger dashboard
         }
 
-        return redirect('/'); // fallback
+        // fallback kalau role belum ditentukan
+        return redirect('/');
     }
 
-
+    /**
+     * Destroy an authenticated session.
+     */
     public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
