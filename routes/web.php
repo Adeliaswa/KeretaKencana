@@ -24,7 +24,10 @@ Route::middleware(['auth', 'role:admin'])
             return view('admin.dashboard');   // 👈 ini nama file yg sudah kamu buat
         })->name('dashboard');
     });
+use App\Http\Controllers\DriverController;
 
+Route::resource('drivers', DriverController::class)
+    ->middleware(['auth', 'verified']); 
 
 // ===================== DEFAULT ROUTES =====================
 use App\Http\Controllers\ProfileController;
