@@ -1,5 +1,3 @@
-<?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Passenger\TripController;
 
@@ -8,10 +6,13 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+    if (auth()->user()->role === 'passenger') {
+        return redirect()->route('passenger.booking'); // Menggunakan route name Anda
+    }
+    
+    return view('dashboard'); 
+})->middleware(['auth'])->name('dashboard'); 
 
-// Passenger routes
 Route::middleware(['auth', 'role:passenger'])
     ->prefix('passenger')
     ->name('passenger.')
