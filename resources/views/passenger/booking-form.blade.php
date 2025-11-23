@@ -9,18 +9,17 @@
         @csrf
 
         <label class="block mb-2 font-medium">Lokasi Jemput</label>
-        <input type="text" name="pickup" class="w-full p-2 border rounded mb-4" required>
+        <input type="text" name="pickup" class="w-full border p-2 rounded mb-4" required>
 
         <label class="block mb-2 font-medium">Tujuan</label>
-        <input type="text" name="destination" class="w-full p-2 border rounded mb-4" required>
+        <input type="text" name="destination" class="w-full border p-2 rounded mb-4" required>
 
         <label class="block mb-2 font-medium">Estimasi Jarak (KM)</label>
-        <input type="number" step="0.1" name="distance" class="w-full p-2 border rounded mb-4" required>
+        <input type="number" name="distance" step="0.1" class="w-full border p-2 rounded mb-4" required>
 
         <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
             Cari Driver
         </button>
-
     </form>
 
 </div>
