@@ -21,12 +21,19 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $request->session()->regenerate();
 
-        if (Auth::user()->role === 'passenger') {
-            return redirect()->route('passenger.booking');
+        $user = auth()->user();
+
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard');
         }
 
-        return redirect()->route('dashboard');
+        if ($user->role === 'passenger') {
+            return redirect()->route('dashboard');  // passenger dashboard
+        }
+
+        return redirect('/'); // fallback
     }
+
 
     public function destroy(Request $request): RedirectResponse
     {
