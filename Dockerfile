@@ -27,6 +27,7 @@ RUN mkdir -p storage \
     && chmod -R 777 storage bootstrap/cache
 
 EXPOSE 10000
+#rebuild pls
 
 CMD php artisan config:clear && \
     php artisan cache:clear && \
