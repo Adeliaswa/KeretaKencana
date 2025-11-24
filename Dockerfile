@@ -7,6 +7,10 @@ RUN apt-get update && apt-get install -y \
 # Install PHP extensions
 RUN docker-php-ext-install pdo pdo_pgsql
 
+# Install Node.js 18 (Vite requirement)
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs
+
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
@@ -15,10 +19,13 @@ WORKDIR /app
 # Copy application
 COPY . /app
 
-# Install Composer dependencies
+# Install Composer first (wajib)
 RUN composer install --no-dev --optimize-autoloader
 
-# Create necessary Laravel storage folders & permissions
+# Install node modules & build Vite
+RUN npm install && npm run build
+
+# Create storage folders & permissions
 RUN mkdir -p /app/storage/framework/cache/data \
     && mkdir -p /app/storage/framework/sessions \
     && mkdir -p /app/storage/framework/views \
@@ -27,7 +34,7 @@ RUN mkdir -p /app/storage/framework/cache/data \
     && chmod -R 777 /app/storage \
     && chmod -R 777 /app/bootstrap/cache
 
-# Entry commands executed at runtime
+# Commands on container start
 CMD php artisan config:clear && \
     php artisan cache:clear && \
     php artisan view:clear && \
