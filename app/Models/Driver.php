@@ -9,10 +9,18 @@ class Driver extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
     protected $fillable = [
         'name',
-        'location_zone',
-        'rating',
-        'is_available',
+        'phone',           
+        'license_number',  
+        'status',          
+        'location_zone',   
+        'rating',          
+        'is_available',    
     ];
 }

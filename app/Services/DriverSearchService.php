@@ -8,19 +8,15 @@ class DriverSearchService
 {
     public function findBestDriver(string $pickupLocation): ?Driver
     {
-        $query = Driver::query();
-        $query->where('is_available', true);
-        $query->orderBy('rating', 'desc');
-
-        $bestDriver = $query->first();
-
-        return $bestDriver;
+        return Driver::where('status', 'available')
+                    ->orderBy('rating', 'desc')
+                    ->first();
     }
 
     public function findAvailableDrivers(string $pickupLocation = ''): Collection
     {
-        return Driver::where('is_available', true)
-                     ->orderBy('rating', 'desc')
-                     ->get();
+        return Driver::where('status', 'available')
+                    ->orderBy('rating', 'desc')
+                    ->get();
     }
 }

@@ -6,10 +6,9 @@
         <h1 class="text-3xl font-extrabold text-gray-700 mb-4">Admin Dashboard</h1>
         <p class="text-gray-600 mb-6">Ringkasan cepat sistem dan akses admin.</p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <a href="{{ route('admin.drivers.index') }}" class="p-4 bg-pink-100 rounded-lg shadow hover:bg-pink-200">Kelola Driver</a>
             <a href="{{ route('admin.trips.index') }}" class="p-4 bg-green-100 rounded-lg shadow hover:bg-green-200">Kelola Trip</a>
-            <a href="{{ route('passenger.history') }}" class="p-4 bg-indigo-100 rounded-lg shadow hover:bg-indigo-200">Lihat Riwayat (as Passenger)</a>
         </div>
     </div>
 </div>
