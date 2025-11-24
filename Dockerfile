@@ -12,6 +12,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
+# Copy application
 COPY . /app
 
 # Install Composer dependencies
@@ -26,24 +27,11 @@ RUN mkdir -p /app/storage/framework/cache/data \
     && chmod -R 777 /app/storage \
     && chmod -R 777 /app/bootstrap/cache
 
-RUN echo "APP_NAME=${APP_NAME}" > /app/.env && \
-    echo "APP_ENV=production" >> /app/.env && \
-    echo "APP_KEY=${APP_KEY}" >> /app/.env && \
-    echo "APP_DEBUG=false" >> /app/.env && \
-    echo "APP_URL=${APP_URL}" >> /app/.env && \
-    echo "LOG_CHANNEL=stderr" >> /app/.env && \
-    echo "LOG_LEVEL=debug" >> /app/.env && \
-    echo "DB_CONNECTION=pgsql" >> /app/.env && \
-    echo "DB_HOST=${DB_HOST}" >> /app/.env && \
-    echo "DB_PORT=5432" >> /app/.env && \
-    echo "DB_DATABASE=${DB_DATABASE}" >> /app/.env && \
-    echo "DB_USERNAME=${DB_USERNAME}" >> /app/.env && \
-    echo "DB_PASSWORD=${DB_PASSWORD}" >> /app/.env && \
-    echo "SESSION_DRIVER=file" >> /app/.env
-
+# Entry commands executed at runtime
 CMD php artisan config:clear && \
     php artisan cache:clear && \
     php artisan view:clear && \
+    php artisan route:clear && \
     php artisan storage:link || true && \
     php artisan migrate --force && \
     php artisan serve --host=0.0.0.0 --port=10000
