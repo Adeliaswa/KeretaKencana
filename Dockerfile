@@ -22,12 +22,16 @@ RUN npm install && npm run build
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Ensure storage is writable
-RUN mkdir -p storage \
-    && chmod -R 777 storage bootstrap/cache
+# Ensure Laravel storage paths exist
+RUN mkdir -p storage/framework/cache/data \
+    && mkdir -p storage/framework/sessions \
+    && mkdir -p storage/framework/views \
+    && mkdir -p storage/logs \
+    && mkdir -p bootstrap/cache \
+    && chmod -R 777 storage \
+    && chmod -R 777 bootstrap/cache
 
 EXPOSE 10000
-#rebuild pls
 
 CMD php artisan config:clear && \
     php artisan cache:clear && \
