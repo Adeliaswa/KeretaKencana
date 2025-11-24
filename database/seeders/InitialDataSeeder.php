@@ -30,26 +30,34 @@ class InitialDataSeeder extends Seeder
         ]);
 
         //Data Driver
+        // Data Driver
         Driver::create([
-            'name' => 'Devi Meong (Available)',
+            'id' => 1,
+            'name' => 'Devi Meong',
+            'phone' => '8123456',
+            'license_number' => '22222',
+            'status' => 'available',
             'location_zone' => 'Cikampek',
-            'rating' => 4.9,
-            'is_available' => true,
         ]);
 
         Driver::create([
-            'name' => 'Adel Lumba (Sibuk)',
+            'id' => 2,
+            'name' => 'Adel Lumba',
+            'phone' => '00000',
+            'license_number' => '00000',
+            'status' => 'available',
             'location_zone' => 'Blimbing',
-            'rating' => 4.6,
-            'is_available' => false,
         ]);
-        
+
         Driver::create([
+            'id' => 4,
             'name' => 'Nadip Ikan',
+            'phone' => '082345',
+            'license_number' => '33333',
+            'status' => 'available',
             'location_zone' => 'Tlogomas',
-            'rating' => 5.0,
-            'is_available' => true,
         ]);
+
 
         $this->command->info('Data awal Admin, Passenger, dan Drivers berhasil dibuat!');
     }

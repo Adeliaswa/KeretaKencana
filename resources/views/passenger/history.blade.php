@@ -22,7 +22,7 @@
                 <tbody>
                     @forelse ($trips as $trip)
                         <tr class="hover:bg-gray-50 transition duration-200">
-                            <td class="border p-3">{{ $trip->driver->name }}</td>
+                            <td class="border p-3">{{ $trip->driver->name ?? 'Driver Tidak Ditemukan'}}</td>
                             <td class="border p-3">{{ $trip->pickup_location }}</td>
                             <td class="border p-3">{{ $trip->destination_location }}</td>
                             <td class="border p-3 font-semibold">Rp {{ number_format($trip->total_cost) }}</td>
