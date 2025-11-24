@@ -17,7 +17,7 @@ COPY . /app
 # Install Composer dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Create necessary Laravel folders & set permissions
+# Prepare storage directories & permissions
 RUN mkdir -p /app/storage/framework/cache/data \
     && mkdir -p /app/storage/framework/sessions \
     && mkdir -p /app/storage/framework/views \
@@ -26,10 +26,11 @@ RUN mkdir -p /app/storage/framework/cache/data \
     && chmod -R 777 /app/storage \
     && chmod -R 777 /app/bootstrap/cache
 
-# Create storage symlink
-RUN php artisan storage:link || true
-
-# Run migrations and start server
-CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=10000
+# Runtime entrypoint
+CMD php artisan key:generate --force && \
+    php artisan config:cache && \
+    php artisan storage:link || true && \
+    php artisan migrate --force && \
+    php artisan serve --host=0.0.0.0 --port=10000
 
 EXPOSE 10000
