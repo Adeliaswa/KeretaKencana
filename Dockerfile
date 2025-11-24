@@ -1,57 +1,44 @@
 # --- STAGE 1: BUILD APLIKASI (untuk Composer & NPM) ---
 FROM php:8.2-fpm AS build
 
-# Install dependencies 
+# Install dependencies yang dibutuhkan untuk build (DEBIAN)
 RUN apt-get update && apt-get install -y \
-    git curl zip unzip libpq-dev
+    git curl zip unzip \
+    libpq-dev   # <--- Pastikan libpq-dev ada di sini
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo pdo_pgsql
+RUN docker-php-ext-install pdo pdo_pgsql # <--- Akan menggunakan libpq-dev dari atas
 
 # Install Node.js 18 (required for Vite/NPM)
-# Menggunakan NodeSource untuk Node.js
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
     && apt-get install -y nodejs
 
-# Copy Composer binary
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# ... (Baris-baris lainnya tetap sama)
 
-WORKDIR /app
-
-# Copy seluruh aplikasi
-COPY . .
-
-# Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader
-
-# Install Node dependencies & build Vite assets
-RUN npm install && npm run build
-
-# --- STAGE 2: PRODUCTION RUNTIME (PHP-FPM + Nginx) ---
+# --- STAGE 2: PRODUCTION RUNTIME (PHP-FPM + Nginx - ALPINE) ---
 FROM php:8.2-fpm-alpine AS runtime
 
-# Install Nginx dan dependencies lain
-# Menggunakan alpine untuk image yang lebih kecil
-RUN apk add --no-cache nginx \
-    libpq \
+# Install Nginx dan dependencies yang dibutuhkan di runtime (APK)
+RUN apk add --no-cache nginx
+
+# Instal libpq-dev (headers) untuk mengompilasi pdo_pgsql, lalu hapus.
+RUN apk add --no-cache --virtual .build-deps \
+        libpq-dev \
+    && docker-php-ext-install pdo pdo_pgsql \
+    && apk del .build-deps \
     && rm -rf /var/cache/apk/*
+    
+# Tambahkan libpq (runtime dependency) yang diinstal secara terpisah (opsional, untuk memastikan)
+RUN apk add --no-cache libpq
 
-# Install PHP extensions
-RUN docker-php-ext-install pdo pdo_pgsql
-
-COPY --from=build /app /var/www/html/
-
-WORKDIR /var/www/html
-
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 775 /var/www/html/storage \
-    && chmod -R 775 /var/www/html/bootstrap/cache
+# ... (Baris-baris lainnya tetap sama, pastikan copy nginx.conf tetap ada)
 
 # Konfigurasi Nginx
 COPY ./docker/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 10000
 
+# Script startup
 CMD php artisan config:clear && \
     php artisan cache:clear && \
     php artisan view:clear && \
