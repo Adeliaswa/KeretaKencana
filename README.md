@@ -3,11 +3,7 @@
 
 **KeretaKencana** adalah aplikasi web berbasis Laravel yang menyediakan layanan ojek online khusus untuk wanita. Aplikasi ini dirancang untuk memberikan rasa aman dan nyaman bagi pengguna wanita yang membutuhkan transportasi pribadi dengan pengemudi wanita. Pengguna dapat memesan ojek, melacak perjalanan, dan mengelola trip mereka secara mudah.
 
-## 🎨 **Desain UI**
-
-Desain aplikasi ini dapat diakses melalui Figma. (Link desain akan ditambahkan sesuai kebutuhan).
-
-## 🚀 **Fitur Utama**
+## **Fitur Utama ( ˃` ⩌ ´˂ )**
 
 ### 1. **Autentikasi Pengguna**
 
@@ -52,7 +48,7 @@ Desain aplikasi ini dapat diakses melalui Figma. (Link desain akan ditambahkan s
 
 ---
 
-## 🧱 **Teknologi & Arsitektur**
+## **Teknologi & Arsitektur (ᵕ—ᴗ—)**
 
 * **Laravel Framework** (MVC Architecture)
 * **MySQL/MariaDB** (Relational Database)
@@ -62,7 +58,7 @@ Desain aplikasi ini dapat diakses melalui Figma. (Link desain akan ditambahkan s
 
 ---
 
-## ⚙️ **Instalasi & Setup**
+## **Instalasi & Setup ( ꩜ ᯅ ꩜;)⁭ ⁭**
 
 Ikuti langkah-langkah berikut untuk menginstal dan menjalankan aplikasi:
 
@@ -72,7 +68,7 @@ Untuk membuat database di **DBeaver** (MySQL), ikuti langkah-langkah berikut:
 
 1. **Install DBeaver**:
 
-   * Jika Anda belum menginstal **DBeaver**, unduh dan install dari [situs resmi DBeaver](https://dbeaver.io/).
+   * Jika Anda belum menginstal **DBeaver**, unduh dan install dari [situs resmi DBeaver](https://dbeaver.io/download/).
 
 2. **Buat Koneksi ke MySQL**:
 
@@ -80,7 +76,7 @@ Untuk membuat database di **DBeaver** (MySQL), ikuti langkah-langkah berikut:
    * Pilih **MySQL** (atau **MariaDB**, tergantung pada jenis database yang digunakan) dan klik **Next**.
    * Masukkan detail koneksi database Anda (hostname, port, username, password, dll.). Untuk lokal, biasanya pengaturan seperti berikut:
 
-     * **Host**: `localhost` atau `127.0.0.1`
+     * **Host**: `127.0.0.1`
      * **Port**: `3306` (default untuk MySQL)
      * **Username**: `root` (atau username lainnya)
      * **Password**: (password MySQL Anda)
@@ -114,11 +110,11 @@ Setelah database siap, konfigurasikan aplikasi Laravel agar dapat terhubung ke d
 
      ```env
      DB_CONNECTION=mysql
-     DB_HOST=127.0.0.1
-     DB_PORT=3306
+     DB_HOST=
+     DB_PORT=
      DB_DATABASE=keretakencana
-     DB_USERNAME=root
-     DB_PASSWORD=secret
+     DB_USERNAME=
+     DB_PASSWORD=
      ```
 
 3. **Generate Application Key**:
@@ -132,7 +128,7 @@ Setelah database siap, konfigurasikan aplikasi Laravel agar dapat terhubung ke d
    * Jalankan migrasi untuk membuat struktur tabel yang diperlukan di database:
 
      ```bash
-     php artisan migrate
+     php artisan migrate:fresh
      ```
 
 ### 3. **Instalasi Dependencies**
@@ -157,18 +153,18 @@ Setelah semua pengaturan selesai, jalankan aplikasi Laravel di server lokal Anda
 php artisan serve
 ```
 
-Aplikasi dapat diakses melalui [http://localhost:8000](http://localhost:8000).
+Aplikasi dapat diakses melalui [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
 ---
 
-## 🧪 **Fitur Pengembangan**
+## **Fitur Pengembangan ᕙ(  •̀ ᗜ •́  )ᕗ**
 
 * Penggunaan **pola MVC** untuk struktur kode yang rapi dan terorganisir.
 * **Blade templating** untuk antarmuka pengguna yang modular.
 * **Tailwind CSS** untuk desain responsif dan modern.
 * Penggunaan **Vite** untuk pengelolaan aset frontend yang efisien.
 
-## 🧑‍💻 **Kontribusi**
+## **Kontribusi ٩(ˊᗜˋ*)و**
 
 Kontribusi sangat terbuka! Silakan ikuti langkah-langkah berikut untuk berkontribusi dalam proyek ini:
 
@@ -214,14 +210,29 @@ Kontribusi sangat terbuka! Silakan ikuti langkah-langkah berikut untuk berkontri
 * Setelah selesai membuat pull request, pastikan untuk memeriksa dan memastikan bahwa pull request memenuhi standar kualitas kode yang telah ditetapkan.
 * Review pull request sebelum melakukan merge ke branch utama (`main`).
 
-📎 **Kontak Developer**:
+📩 **Kontak Developer**:
 
-* Instagram: @developer1
-* Email: [developer1@example.com](mailto:developer1@example.com)
+**ADELIA SWASTIKA DEWI**
+* Instagram: [@d_do0lphin](instagram.com/d_do0lphin)
+* Email: [adeliaswastikadewi@gmail.com](mailto:adeliaswastikadewi@gmail.com)
+* LinkedIn: [linkedin.com/in/adeliaswastika](https://www.linkedin.com/in/adeliaswastika)
+* GitHub: [github.com/Adeliaswa](https://github.com/Adeliaswa)
 
-📜 **Lisensi**:
-Proyek ini dirilis dengan lisensi **MIT**.
+**DEVI ATIKA PUTRI**
+* Instagram: [@de_phia02](instagram.com/de_phia02)
+* Email: [viatika265@gmail.com](mailto:viatika265@gmail.com)
+* LinkedIn: [linkedin.com/in/deviatika265](www.linkedin.com/in/deviatika265)
+* GitHub: [github.com/viatika265](https://github.com/viatika265)
+
+**NADHIFA FITRIYAH**
+* Instagram: [@naadhfy](instagram.com/naadhfy)
+* Email: [nadhifafitriyaah@gmail.com](mailto:nadhifafitriyaah@gmail.com)
+* LinkedIn: [linkedin.com/in/nadhi-fa](www.linkedin.com/in/nadhi-fa)
+* GiHub: [github.com/nadh-ifa](https://github.com/nadh-ifa)
+
+📄 **Lisensi**:
+Proyek ini dirilis dengan lisensi **Copyright © 2025 by Kelompok 5 PAW TI-A. (๑>؂•̀๑)**
 
 ---
 
-Dengan tambahan langkah-langkah terkait pembuatan **database di DBeaver** dan pengonfigurasian koneksi ke MySQL, dokumentasi ini sekarang lebih lengkap dan siap digunakan untuk memulai pengembangan aplikasi **KeretaKencana**!
+
