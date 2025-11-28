@@ -73,8 +73,6 @@ Untuk memudahkan pengujian, gunakan akun berikut:
 
 Ikuti langkah-langkah berikut untuk menginstal dan menjalankan aplikasi:
 
-### 1. **Membuat Database di DBeaver**
-
 Untuk membuat database di **DBeaver** (MySQL), ikuti langkah-langkah berikut:
 
 1. **Install DBeaver**:
@@ -105,17 +103,16 @@ Untuk membuat database di **DBeaver** (MySQL), ikuti langkah-langkah berikut:
 
    * Pastikan database **KeretaKencana** sudah muncul di panel kiri, di bawah koneksi yang telah dibuat.
 
-### 2. **Konfigurasi Environment Laravel**
 
 Setelah database siap, konfigurasikan aplikasi Laravel agar dapat terhubung ke database **KeretaKencana**:
 
-1. **Duplikat File `.env.example` menjadi `.env`**:
+5. **Duplikat File `.env.example` menjadi `.env`**:
 
    ```bash
    cp .env.example .env
    ```
 
-2. **Edit File `.env`**:
+6. **Edit File `.env`**:
 
    * Buka file `.env` dan sesuaikan pengaturan database sebagai berikut:
 
@@ -127,28 +124,26 @@ Setelah database siap, konfigurasikan aplikasi Laravel agar dapat terhubung ke d
      DB_USERNAME=
      DB_PASSWORD=
      ```
-3. **Instalasi Dependencies:**:
+7. **Instalasi Dependencies:**:
 
    ```bash
    composer install
    npm install && npm run build
    ```
    
-3. **Generate Application Key**:
+8. **Generate Application Key**:
 
    ```bash
    php artisan key:generate
    ```
 
-5. **Migrasi Database**:
+9. **Migrasi Database**:
 
    * Jalankan migrasi untuk membuat struktur tabel yang diperlukan di database:
 
      ```bash
      php artisan migrate:fresh --seed
      ```
-
-### 4. **Jalankan Aplikasi**
 
 Setelah semua pengaturan selesai, jalankan aplikasi Laravel di server lokal Anda:
 
