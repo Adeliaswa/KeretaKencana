@@ -7,7 +7,7 @@
 Untuk memudahkan pengujian, gunakan akun berikut:
 
 ### **👤 Login sebagai Penumpang**
-* Email: passenger@kereta@.com
+* Email: passenger@kereta.com
 * Password: password
   
 ### **🛠️ Login sebagai Admin**
