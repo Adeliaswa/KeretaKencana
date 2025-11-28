@@ -1,59 +1,227 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# 🚗 **KeretaKencana — Aplikasi Ojek Online Khusus Wanita** (Laravel Web App)
 
-## About Laravel
+**KeretaKencana** adalah aplikasi web berbasis Laravel yang menyediakan layanan ojek online khusus untuk wanita. Aplikasi ini dirancang untuk memberikan rasa aman dan nyaman bagi pengguna wanita yang membutuhkan transportasi pribadi dengan pengemudi wanita. Pengguna dapat memesan ojek, melacak perjalanan, dan mengelola trip mereka secara mudah.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🎨 **Desain UI**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Desain aplikasi ini dapat diakses melalui Figma. (Link desain akan ditambahkan sesuai kebutuhan).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 **Fitur Utama**
 
-## Learning Laravel
+### 1. **Autentikasi Pengguna**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+* Fitur **login** dan **registrasi** untuk pengguna dengan validasi form sebagai **admin** atau **penumpang**.
+* Notifikasi sukses atau gagal untuk setiap operasi autentikasi.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 2. **Profile**
 
-## Laravel Sponsors
+* **Admin** dan **penumpang** dapat mengedit profil mereka melalui menu **Profile**.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 3. **Logout**
 
-### Premium Partners
+* Admin dan penumpang dapat **logout** dari akun mereka melalui menu logout di aplikasi.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## **Untuk Penumpang**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 1. **Dashboard Utama**
 
-## Code of Conduct
+* Dashboard utama untuk penumpang berisi menu **Pesan Trip** dan **Riwayat Trip**.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+  * **Pesan Trip**: Penumpang dapat memesan ojek untuk perjalanan mereka dengan memilih pengemudi wanita yang tersedia.
+  * **Riwayat Trip**: Menampilkan riwayat pemesanan trip sebelumnya dan status dari setiap trip.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## **Untuk Admin**
 
-## License
+### 1. **Dashboard Admin**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* Dashboard untuk admin berisi dua menu utama:
+
+  * **Kelola Driver**: Menampilkan daftar pengemudi dan memungkinkan admin untuk mengedit, menghapus, atau menambah data driver baru.
+
+    * **Edit Driver**: Fitur untuk mengedit data driver yang sudah ada, seperti informasi pribadi dan status driver.
+    * **Tambah Driver**: Menyediakan form untuk menambah driver baru ke dalam daftar driver.
+
+  * **Kelola Trip**: Admin dapat melihat daftar trip yang dipesan oleh penumpang melalui menu pesan trip, dan dapat mengelola status trip tersebut.
+
+    * Admin dapat memperbarui status trip, menghapus trip, atau mengubah informasi terkait trip sesuai kebutuhan.
+
+---
+
+## 🧱 **Teknologi & Arsitektur**
+
+* **Laravel Framework** (MVC Architecture)
+* **MySQL/MariaDB** (Relational Database)
+* **Blade Template Engine** untuk tampilan antarmuka pengguna.
+* **Tailwind CSS** untuk styling.
+* **Vite** untuk build tools dan pengolahan aset frontend.
+
+---
+
+## ⚙️ **Instalasi & Setup**
+
+Ikuti langkah-langkah berikut untuk menginstal dan menjalankan aplikasi:
+
+### 1. **Membuat Database di DBeaver**
+
+Untuk membuat database di **DBeaver** (MySQL), ikuti langkah-langkah berikut:
+
+1. **Install DBeaver**:
+
+   * Jika Anda belum menginstal **DBeaver**, unduh dan install dari [situs resmi DBeaver](https://dbeaver.io/).
+
+2. **Buat Koneksi ke MySQL**:
+
+   * Buka DBeaver dan klik pada ikon **New Database Connection** di toolbar.
+   * Pilih **MySQL** (atau **MariaDB**, tergantung pada jenis database yang digunakan) dan klik **Next**.
+   * Masukkan detail koneksi database Anda (hostname, port, username, password, dll.). Untuk lokal, biasanya pengaturan seperti berikut:
+
+     * **Host**: `localhost` atau `127.0.0.1`
+     * **Port**: `3306` (default untuk MySQL)
+     * **Username**: `root` (atau username lainnya)
+     * **Password**: (password MySQL Anda)
+
+3. **Buat Database**:
+
+   * Setelah berhasil terkoneksi, klik kanan pada koneksi MySQL Anda di panel kiri dan pilih **SQL Editor**.
+   * Jalankan query berikut untuk membuat database **KeretaKencana**:
+
+     ```sql
+     CREATE DATABASE KeretaKencana;
+     ```
+
+4. **Verifikasi Database**:
+
+   * Pastikan database **KeretaKencana** sudah muncul di panel kiri, di bawah koneksi yang telah dibuat.
+
+### 2. **Konfigurasi Environment Laravel**
+
+Setelah database siap, konfigurasikan aplikasi Laravel agar dapat terhubung ke database **KeretaKencana**:
+
+1. **Duplikat File `.env.example` menjadi `.env`**:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Edit File `.env`**:
+
+   * Buka file `.env` dan sesuaikan pengaturan database sebagai berikut:
+
+     ```env
+     DB_CONNECTION=mysql
+     DB_HOST=127.0.0.1
+     DB_PORT=3306
+     DB_DATABASE=keretakencana
+     DB_USERNAME=root
+     DB_PASSWORD=secret
+     ```
+
+3. **Generate Application Key**:
+
+   ```bash
+   php artisan key:generate
+   ```
+
+4. **Migrasi Database**:
+
+   * Jalankan migrasi untuk membuat struktur tabel yang diperlukan di database:
+
+     ```bash
+     php artisan migrate
+     ```
+
+### 3. **Instalasi Dependencies**
+
+1. **Install Dependensi PHP**:
+
+   ```bash
+   composer install
+   ```
+
+2. **Install Dependensi JavaScript**:
+
+   ```bash
+   npm install && npm run build
+   ```
+
+### 4. **Jalankan Aplikasi**
+
+Setelah semua pengaturan selesai, jalankan aplikasi Laravel di server lokal Anda:
+
+```bash
+php artisan serve
+```
+
+Aplikasi dapat diakses melalui [http://localhost:8000](http://localhost:8000).
+
+---
+
+## 🧪 **Fitur Pengembangan**
+
+* Penggunaan **pola MVC** untuk struktur kode yang rapi dan terorganisir.
+* **Blade templating** untuk antarmuka pengguna yang modular.
+* **Tailwind CSS** untuk desain responsif dan modern.
+* Penggunaan **Vite** untuk pengelolaan aset frontend yang efisien.
+
+## 🧑‍💻 **Kontribusi**
+
+Kontribusi sangat terbuka! Silakan ikuti langkah-langkah berikut untuk berkontribusi dalam proyek ini:
+
+1. **Fork repository**: Fork repositori ini ke akun GitHub Anda.
+2. **Buat branch baru**:
+
+   ```bash
+   git checkout -b fitur-pemesanan-ojek
+   ```
+3. **Buat perubahan**: Lakukan perubahan sesuai dengan fitur atau bug yang ingin Anda selesaikan.
+4. **Commit perubahan**: Gunakan pesan commit yang sesuai dengan format **Conventional Commit**:
+
+   ```bash
+   git commit -m "feat(booking): tambah fitur pemesanan ojek"
+   ```
+5. **Push ke repository**:
+
+   ```bash
+   git push origin fitur-pemesanan-ojek
+   ```
+6. **Buat Pull Request**: Buat pull request di GitHub untuk menggabungkan perubahan ke branch utama.
+
+### **Branching untuk Collaborative Work**
+
+* Gunakan branch terpisah untuk setiap fitur atau perbaikan bug. Nama branch harus mengikuti konvensi:
+
+  * `fitur/<nama-fitur>`
+  * `bugfix/<nama-bug>`
+
+### **Conventional Commit Message**
+
+* Format pesan commit menggunakan format berikut:
+
+  * `feat`: untuk penambahan fitur baru.
+  * `fix`: untuk perbaikan bug.
+  * `docs`: untuk perubahan dokumentasi.
+  * `style`: untuk perubahan yang hanya mengubah styling (misal: format kode).
+  * `refactor`: untuk perubahan kode yang tidak mempengaruhi fitur atau perbaikan bug.
+  * `test`: untuk penambahan atau perubahan pengujian.
+
+### **Pull Request & Merge**
+
+* Setelah selesai membuat pull request, pastikan untuk memeriksa dan memastikan bahwa pull request memenuhi standar kualitas kode yang telah ditetapkan.
+* Review pull request sebelum melakukan merge ke branch utama (`main`).
+
+📎 **Kontak Developer**:
+
+* Instagram: @developer1
+* Email: [developer1@example.com](mailto:developer1@example.com)
+
+📜 **Lisensi**:
+Proyek ini dirilis dengan lisensi **MIT**.
+
+---
+
+Dengan tambahan langkah-langkah terkait pembuatan **database di DBeaver** dan pengonfigurasian koneksi ke MySQL, dokumentasi ini sekarang lebih lengkap dan siap digunakan untuk memulai pengembangan aplikasi **KeretaKencana**!
