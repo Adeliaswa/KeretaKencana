@@ -127,18 +127,17 @@ Setelah database siap, konfigurasikan aplikasi Laravel agar dapat terhubung ke d
      DB_USERNAME=
      DB_PASSWORD=
      ```
-
-3. **Generate Application Key**:
-
-   ```bash
-   php artisan key:generate
-   ```
-   
-4. **Instalasi Dependencies:**:
+3. **Instalasi Dependencies:**:
 
    ```bash
    composer install
    npm install && npm run build
+   ```
+   
+3. **Generate Application Key**:
+
+   ```bash
+   php artisan key:generate
    ```
 
 5. **Migrasi Database**:
