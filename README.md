@@ -4,7 +4,7 @@
 **KeretaKencana** adalah aplikasi web berbasis Laravel yang menyediakan layanan ojek online khusus untuk wanita. Aplikasi ini dirancang untuk memberikan rasa aman dan nyaman bagi pengguna wanita yang membutuhkan transportasi pribadi dengan pengemudi wanita. Pengguna dapat memesan ojek, melacak perjalanan, dan mengelola trip mereka secara mudah.
 
 ## **🔑 Demo Login Accounts**
-* Untuk memudahkan pengujian, gunakan akun berikut:
+Untuk memudahkan pengujian, gunakan akun berikut:
 
 ### **👤 Login sebagai Penumpang**
 * Email: pemumpang@kereta@gmail.com
