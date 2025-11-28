@@ -7,7 +7,7 @@
 Untuk memudahkan pengujian, gunakan akun berikut:
 
 ### **👤 Login sebagai Penumpang**
-* Email: pemumpang@kereta@gmail.com
+* Email: passenger@kereta@.com
 * Password: password
   
 ### **🛠️ Login sebagai Admin**
@@ -133,28 +133,21 @@ Setelah database siap, konfigurasikan aplikasi Laravel agar dapat terhubung ke d
    ```bash
    php artisan key:generate
    ```
+   
+4. **Instalasi Dependencies:**:
 
-4. **Migrasi Database**:
+   ```bash
+   composer install
+   npm install && npm run build
+   ```
+
+5. **Migrasi Database**:
 
    * Jalankan migrasi untuk membuat struktur tabel yang diperlukan di database:
 
      ```bash
-     php artisan migrate:fresh
+     php artisan migrate:fresh --seed
      ```
-
-### 3. **Instalasi Dependencies**
-
-1. **Install Dependensi PHP**:
-
-   ```bash
-   composer install
-   ```
-
-2. **Install Dependensi JavaScript**:
-
-   ```bash
-   npm install && npm run build
-   ```
 
 ### 4. **Jalankan Aplikasi**
 
