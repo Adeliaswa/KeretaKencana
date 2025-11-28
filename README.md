@@ -164,7 +164,7 @@ Aplikasi dapat diakses melalui [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 * **Tailwind CSS** untuk desain responsif dan modern.
 * Penggunaan **Vite** untuk pengelolaan aset frontend yang efisien.
 
-## **Kontribusi ٩(ˊᗜˋ*)و**
+## **Kontribusi ٩(ˊᗜˋ)و**
 
 Kontribusi sangat terbuka! Silakan ikuti langkah-langkah berikut untuk berkontribusi dalam proyek ini:
 
@@ -213,19 +213,19 @@ Kontribusi sangat terbuka! Silakan ikuti langkah-langkah berikut untuk berkontri
 📩 **Kontak Developer**:
 
 **ADELIA SWASTIKA DEWI**
-* Instagram: [@d_do0lphin](instagram.com/d_do0lphin)
+* Instagram: [@d_do0lphin](https://instagram.com/d_do0lphin)
 * Email: [adeliaswastikadewi@gmail.com](mailto:adeliaswastikadewi@gmail.com)
 * LinkedIn: [linkedin.com/in/adeliaswastika](https://www.linkedin.com/in/adeliaswastika)
 * GitHub: [github.com/Adeliaswa](https://github.com/Adeliaswa)
 
 **DEVI ATIKA PUTRI**
-* Instagram: [@de_phia02](instagram.com/de_phia02)
+* Instagram: [@de_phia02](https://instagram.com/de_phia02)
 * Email: [viatika265@gmail.com](mailto:viatika265@gmail.com)
 * LinkedIn: [linkedin.com/in/deviatika265](www.linkedin.com/in/deviatika265)
 * GitHub: [github.com/viatika265](https://github.com/viatika265)
 
 **NADHIFA FITRIYAH**
-* Instagram: [@naadhfy](instagram.com/naadhfy)
+* Instagram: [@naadhfy](https://instagram.com/naadhfy)
 * Email: [nadhifafitriyaah@gmail.com](mailto:nadhifafitriyaah@gmail.com)
 * LinkedIn: [linkedin.com/in/nadhi-fa](www.linkedin.com/in/nadhi-fa)
 * GiHub: [github.com/nadh-ifa](https://github.com/nadh-ifa)
