@@ -6,10 +6,11 @@
 ## **🔑 Demo Login Accounts**
 * Untuk memudahkan pengujian, gunakan akun berikut:
 
-***👤 Login sebagai Penumpang**
+### **👤 Login sebagai Penumpang**
 * Email: pemumpang@kereta@gmail.com
 * Password: password
-**🛠️ Login sebagai Admin**
+  
+### **🛠️ Login sebagai Admin**
 * Email: admin@kereta.com
 * Password: password
 
